@@ -1,0 +1,4 @@
+homepage:
+    pattern: "/"
+    defaults:
+        _controller: "QafooWorkshopBundle:Workshop:index"

@@ -1,0 +1,18 @@
+default:
+  paths:
+    features: features/
+    bootstrap: %behat.paths.features%/bootstrap
+  context:
+    class: "FeatureContext"
+  formatter:
+    name: progress
+  extensions:
+    Behat\Symfony2Extension\Extension:
+        mink_driver: true
+        kernel:
+            env: test
+            debug: true
+            path: app/AppKernel.php
+    Behat\MinkExtension\Extension:
+      base_url: 'http://qafoo-workshop/app_dev.php'
+      default_session: symfony2
