@@ -2,15 +2,15 @@
 
 {% block content %}
 
-<div style="color: {{ player.color }};">Player: {{ player.name }}</div>
+<div style="color: #ff0000;">Player: {{ player.name }}</div>
 
 <form method="post" action="{{ path('form') }}">
     {{ form_row(form.name) }}
 
     Color:
-        <input type="text" name="player[color][r]" value="{{ form.color.get('value').r }}" />
-        <input type="text" name="player[color][g]" value="{{ form.color.get('value').g }}" />
-        <input type="text" name="player[color][b]" value="{{ form.color.get('value').b }}" />
+        <input type="text" name="player[color][r]" value="{# {{ form.color.get('value').r }} #}" />
+        <input type="text" name="player[color][g]" value="{# {{ form.color.get('value').g }} #}" />
+        <input type="text" name="player[color][b]" value="{# {{ form.color.get('value').b }} #}" />
 
 
     {{ form_rest(form) }}
