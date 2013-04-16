@@ -6,14 +6,9 @@ class Color
 {
     private $hex;
 
-    public function setHex($hex)
+    public function __construct($hex)
     {
         $this->hex = $hex;
-    }
-
-    public function getHex()
-    {
-        return $this->hex;
     }
 
     public function __toString()

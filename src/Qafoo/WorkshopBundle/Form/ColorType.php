@@ -2,6 +2,9 @@
 
 namespace Qafoo\WorkshopBundle\Form;
 
+use Qafoo\WorkshopBundle\Model\Color;
+
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -12,23 +15,19 @@ class ColorType extends AbstractType
     {
         // See http://api.symfony.com/2.2/Symfony/Component/Form/FormBuilder.html
         //
-        // Try with:
-        // 1. addEventListener()
+        // 1. addModelTransformer()
         // 2. addViewTransformer()
         //
         // See DateTimeType
         $builder
-            ->add('r', 'number')
-            ->add('g', 'number')
-            ->add('b', 'number')
+            ->addModelTransformer(new ColorTransformer())
+            ->addViewTransformer(new ColorTransformer())
         ;
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'Qafoo\WorkshopBundle\Model\Color',
-        ));
+        $resolver->setDefaults(array());
     }
 
     public function getName()

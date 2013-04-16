@@ -7,7 +7,11 @@
 <form method="post" action="{{ path('form') }}">
     {{ form_row(form.name) }}
 
-    {{ form_row(form.color} ))
+    Color:
+        <input type="text" name="player[color][r]" value="{{ form.color.get('value').r }}" />
+        <input type="text" name="player[color][g]" value="{{ form.color.get('value').g }}" />
+        <input type="text" name="player[color][b]" value="{{ form.color.get('value').b }}" />
+
 
     {{ form_rest(form) }}
 

@@ -27,10 +27,13 @@ class WorkshopController extends Controller
         $valid = false;
 
         $form = $this->createForm(new PlayerType(), $player);
-        $form->bind($request);
 
-        if ($form->isValid()) {
-            $valid = true;
+        if ($request->getMethod() == 'POST') {
+            $form->bind($request);
+
+            if ($form->isValid()) {
+                $valid = true;
+            }
         }
 
         return $this->render('QafooWorkshopBundle:Workshop:color.html.twig', array(
