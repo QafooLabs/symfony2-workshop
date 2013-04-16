@@ -1,0 +1,16 @@
+{% extends "QafooWorkshopBundle::layout.html.twig" %}
+
+{% block content %}
+
+<div style="color: {{ player.color }};">Player: {{ player.name }}</div>
+
+<form method="post" action="{{ path('form') }}">
+    {{ form_row(form.name) }}
+
+    {{ form_row(form.color} ))
+
+    {{ form_rest(form) }}
+
+    <input type="submit" value="Save" />
+</form>
+{% endblock %}
