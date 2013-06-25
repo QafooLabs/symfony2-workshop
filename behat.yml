@@ -14,5 +14,5 @@ default:
             debug: true
             path: app/AppKernel.php
     Behat\MinkExtension\Extension:
-      base_url: 'http://qafoo-workshop/app_dev.php'
+      base_url: 'http://sf2demo/app_dev.php'
       default_session: symfony2
