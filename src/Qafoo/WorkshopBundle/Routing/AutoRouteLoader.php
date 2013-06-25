@@ -24,6 +24,7 @@ class AutoRouteLoader extends FileLoader
             foreach ($class->getMethods() as $method) {
                 if (substr($method->getName(), -6) == "Action") {
                     $name = strtolower(str_replace("Action", "", $method->getName()));
+
                     $route = new Route('/' . $name, array('_controller' => 'QafooWorkshopBundle:Workshop:'.$name), array(), array());
 
                     $collection->add($name, $route);

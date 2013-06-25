@@ -13,9 +13,9 @@ use Qafoo\WorkshopBundle\Form\PlayerType;
 
 class WorkshopController extends Controller
 {
-    public function indexAction()
+    public function helloWorldAction()
     {
-        return $this->render('QafooWorkshopBundle:Workshop:index.html.twig', array());
+        return $this->render('QafooWorkshopBundle:Workshop:helloWorld.html.twig', array());
     }
 
     /**
