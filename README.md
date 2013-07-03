@@ -17,8 +17,9 @@ and call depending on:
 
     composer create-project qafoolabs/symfony2-workshop symfony-ws dev-master --prefer-dist
 
-or 
-    php composer.phar create-project qafoolabs/symfony2-workshop symfony-ws --prefer-dist
+or
+
+    php composer.phar create-project qafoolabs/symfony2-workshop symfony-ws dev-master --prefer-dist
 
 This will create a new project with this application and download all the dependencies.
 
