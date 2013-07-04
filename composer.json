@@ -17,11 +17,14 @@
         "twig/extensions": "1.0.*",
         "symfony/monolog-bundle": "2.1.*",
         "sensio/distribution-bundle": "2.1.*",
-        "sensio/generator-bundle": "2.1.*",
+        "sensio/generator-bundle": "2.1.*"
+    },
+    "require-dev": {
         "behat/behat": "*",
         "behat/symfony2-extension": "*",
         "behat/mink-extension": "*",
-        "behat/mink-browserkit-driver": "*"
+        "behat/mink-browserkit-driver": "*",
+        "phpunit/phpunit": "*"
     },
     "scripts": {
         "post-install-cmd": [
@@ -36,5 +39,8 @@
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web"
+    },
+    "config": {
+        "bin-dir": "bin"
     }
 }
