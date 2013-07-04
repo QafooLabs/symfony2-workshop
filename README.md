@@ -93,3 +93,9 @@ Put the following into `/etc/nginx/sites-enabled/sf2demo`:
 This application is only for workshop purposes, it is neither secure nor sanely
 configured production usage.
 
+## Unit Testing
+
+After setting up the demo application, you can use PHPUnit to test your code. To execute PHPUnit, run the following
+command from the project's root directory:
+
+    php bin/phpunit -c app
