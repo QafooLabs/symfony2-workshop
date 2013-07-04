@@ -2,8 +2,14 @@
 
 namespace Qafoo\WorkshopBundle\Model;
 
+use Symfony\Component\Validator\Constraints
+    as Assert;
+
 class Player
 {
+    /**
+     * @Assert\NotBlank
+     */
     protected $name;
     protected $color;
 
