@@ -34,12 +34,11 @@ apache::dotconf { 'custom':
 apache::module { 'rewrite': }
 
 apache::vhost { 'workshop.dev':
-  server_name   => 'workshop.dev',
-  serveraliases => [],
-  docroot       => '/srv/www/vhosts/workshop.dev/web',
-  port          => '80',
-  env_variables => [],
-  priority      => '1',
+  server_name    => 'workshop.dev',
+  docroot        => '/srv/www/vhosts/workshop.dev/web',
+  directory      => '/srv/www/vhosts/workshop.dev',
+  options        => 'FollowSymLinks',
+  allow_override => 'All'
 }
 
 apt::ppa { 'ppa:ondrej/php5':
