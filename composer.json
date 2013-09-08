@@ -19,9 +19,11 @@
         "sensio/distribution-bundle": "2.1.*",
         "sensio/generator-bundle": "2.1.*",
         "behat/behat": "*",
+        "behat/mink-goutte-driver": "*",
         "behat/symfony2-extension": "*",
         "behat/mink-extension": "*",
-        "behat/mink-browserkit-driver": "*"
+        "behat/mink-browserkit-driver": "*",
+        "behat/mink-sahi-driver": "*"
     },
     "scripts": {
         "post-install-cmd": [
