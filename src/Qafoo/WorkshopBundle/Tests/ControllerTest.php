@@ -84,3 +84,27 @@ class ControllerTest extends WebTestCase
         }
     }
 }
+
+interface WeatherLoader
+{
+    /**
+     * @return int
+     */
+    public function loadWeather($zip);
+}
+
+class GoogleWeather implements WeatherLoader
+{
+    public function loadWeather($zip)
+    {
+        // .. reale impl
+    }
+}
+
+class MockWeatherLoader implements WeatherLoader
+{
+    public function loadWeather($zip)
+    {
+        return 42;
+    }
+}

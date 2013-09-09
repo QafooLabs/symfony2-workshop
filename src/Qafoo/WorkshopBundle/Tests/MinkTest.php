@@ -4,6 +4,16 @@ namespace Qafoo\WorkshopBundle\Tests;
 
 class MinkTest extends \PHPUnit_Framework_TestCase
 {
+    public function testLogin()
+    {
+        #$driver = $this->createSahiDriver();
+        $driver = $this->createGuzzleDriver();
+        $driver->setBasicAuth('user', 'userpass');
+
+        $session = $this->createSession($driver);
+        $session->visit('http://localhost:8000/form');
+    }
+
     public function testWikipediaFrontpage()
     {
         $session = $this->createSession($this->createGuzzleDriver());
@@ -39,7 +49,6 @@ class MinkTest extends \PHPUnit_Framework_TestCase
         $client = new \Behat\Mink\Driver\Goutte\Client();
         $client->setClient(new \Guzzle\Http\Client('', $clientOptions));
         $driver = new \Behat\Mink\Driver\GoutteDriver($client);
-        $driver->setBasicAuth('foo', 'bar');
 
         return $driver;
     }

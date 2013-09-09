@@ -40,9 +40,6 @@ class FeatureContext extends MinkContext implements KernelAwareInterface
         $this->kernel = $kernel;
     }
 
-    /**
-     * @BeforeScenario
-     */
     public function setUp()
     {
         Date::setTestingNow(new \DateTime("now"));
@@ -62,4 +59,33 @@ class FeatureContext extends MinkContext implements KernelAwareInterface
         $entityManager->flush();
         $entityManager->clear();
     }
+
+    private $stock;
+
+    /**
+     * @Given /^there are "([^"]*)" steak on stock$/
+     */
+    public function thereAreSteakOnStock($arg1)
+    {
+        $this->stock = $arg1;
+    }
+
+    /**
+     * @When /^I order a steack$/
+     */
+    public function iOrderASteack()
+    {
+        if ($this->stock == 0) {
+            throw new \RuntimeException("No steak on stock");
+        }
+    }
+
+    /**
+     * @Then /^the waiter serves me a steak$/
+     */
+    public function theWaiterServesMeASteak()
+    {
+        echo "Hello steak!";
+    }
+
 }
