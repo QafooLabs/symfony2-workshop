@@ -4,6 +4,11 @@ This repository hosts a Symfony2 application used for Symfony Testing and
 Doctrine2 workshops.  It is a derivation of the Symfony Standard Distribution
 that is explicitly build for teaching Doctrine2 in a Symfony2 application.
 
+## PHPUnit
+
+pear channel-discover pear.phpunit.de
+pear install --alldeps phpunit/phpunit
+
 ## Installation
 
 When you have trouble intalling this application before a workshop, send me

@@ -11,7 +11,7 @@ abstract class KernelTestCase extends WebTestCase
     {
         $config = array('environment'=>'test', 'debug'=>true);
         self::$kernel = self::createKernel($config);
-        self::$kernel−>boot();
+        self::$kernel->boot();
 
         $this->container = self::$kernel->getContainer();
     }

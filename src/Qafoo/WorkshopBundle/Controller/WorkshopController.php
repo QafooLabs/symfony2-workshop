@@ -18,6 +18,11 @@ class WorkshopController extends Controller
         return $this->render('QafooWorkshopBundle:Workshop:helloWorld.html.twig', array());
     }
 
+    public function testAction(Request $request)
+    {
+        return new Response('Hello ' . $request->query->get('name', 'World!'));
+    }
+
     /**
      * Building a Color Form Type
      */
