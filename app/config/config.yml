@@ -38,7 +38,6 @@ framework:
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] }
     default_locale:  "en"
-    trust_proxy_headers: false
     trusted_proxies: ~
     session:         ~
     profiler: { only_exceptions: false }
