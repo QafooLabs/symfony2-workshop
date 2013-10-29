@@ -41,6 +41,5 @@
     },
     "archive": {
         "exclude": ["!vendor"]
-    },
-    "config": {"github-oauth": {"github.com": "8266ef5a024bd3ec9747e1f34d1863eee42ac859"}}
+    }
 }
