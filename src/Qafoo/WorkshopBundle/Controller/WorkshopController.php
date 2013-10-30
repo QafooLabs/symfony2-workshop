@@ -28,7 +28,7 @@ class WorkshopController extends Controller
     {
         if (date('H') > 4 && date('H') < 12) {
             $partDay = 'morning';
-        } else if (date('H') > 12 && date('H') < 19) {
+        } else if (date('H') >= 12 && date('H') < 19) {
             $partDay = 'afternoon';
         } else {
             $partDay = 'night';
