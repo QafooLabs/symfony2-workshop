@@ -1,5 +1,16 @@
 {% extends "QafooWorkshopBundle::layout.html.twig" %}
 
 {% block content %}
-Hello world!
+<h1 id="greeting">Hello {{ name }}!</h1>
+
+<div class="dateWidget">
+    Good {{ partOfDay }}! The current time is <span class="date">{{ currentTime }}</span>.
+</div>
+
+<h4>Suggested Greetings</h4>
+
+<ul class="suggetions">
+    <li><a href="{{ path('helloworld', {'name': 'Alice'}) }}">Alice</a></li>
+    <li><a href="{{ path('helloworld', {'name': 'Bob'}) }}">Bob</a></li>
+</ul>
 {% endblock %}
