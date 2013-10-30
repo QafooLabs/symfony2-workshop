@@ -23,7 +23,8 @@
         "behat/symfony2-extension": "@stable",
         "behat/mink-extension": "@stable",
         "behat/mink-browserkit-driver": "@stable",
-        "behat/mink-sahi-driver": "@stable"
+        "behat/mink-sahi-driver": "@stable",
+        "phpunit/phpunit": "@stable"
     },
     "scripts": {
         "post-install-cmd": [

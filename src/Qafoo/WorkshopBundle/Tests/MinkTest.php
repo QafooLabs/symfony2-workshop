@@ -4,13 +4,16 @@ namespace Qafoo\WorkshopBundle\Tests;
 
 class MinkTest extends \PHPUnit_Framework_TestCase
 {
-    public function testWikipediaFrontpage()
+    public function testWorkshopFrontpage()
     {
-        $session = $this->createSession($this->createGuzzleDriver());
-        $session = $this->createSession($this->createSahiDriver());
-        $session->visit('http://wikipedia.org');
+        $this->markTestSkipped('Remove or comment this line to enable the test.');
 
-        echo $session->getPage()->getContent();
+        $session = $this->createSession($this->createGuzzleDriver());
+        //$session = $this->createSession($this->createSahiDriver());
+
+        $session->visit('http://localhost:8000');
+
+        $this->assertContains('Qafoo Workshop with Symfony2', $session->getPage()->getContent());
     }
 
     private function createSession($driver)
