@@ -8,8 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Doctrine\Common\Collections\Criteria;
 
-use Qafoo\WorkshopBundle\Model\Player;
-use Qafoo\WorkshopBundle\Form\PlayerType;
+use Qafoo\WorkshopBundle\Form\SavingsType;
+use Qafoo\WorkshopBundle\Entity\Savings;
 
 class WorkshopController extends Controller
 {
@@ -23,22 +23,23 @@ class WorkshopController extends Controller
      */
     public function formAction(Request $request)
     {
-        $player = new Player();
-        $valid = false;
+        $savings = new Savings();
+        $form = $this->createForm(new SavingsType(), $savings);
 
-        $form = $this->createForm(new PlayerType(), $player);
-
-        if ($request->getMethod() == 'POST') {
+        if ($request->getMethod() === 'POST') {
             $form->bind($request);
 
             if ($form->isValid()) {
-                $valid = true;
+                $session = $request->getSession();
+                $session->getFlashBag()->add('notice', sprintf(
+                    'You will have earned %s € after %d years of saving.', round($savings->calculate(), 2), $savings->years
+                ));
+
+                return $this->redirect($this->generateUrl('form'));
             }
         }
 
-        return $this->render('QafooWorkshopBundle:Workshop:color.html.twig', array(
-            'player' => $player,
-            'valid' => $valid,
+        return $this->render('QafooWorkshopBundle:Workshop:savings.html.twig', array(
             'form' => $form->createView(),
         ));
     }
