@@ -2,12 +2,12 @@
 
 This repository hosts a Symfony2 application used for Symfony Testing and
 Doctrine2 workshops.  It is a derivation of the Symfony Standard Distribution
-that is explicitly build for teaching Doctrine2 in a Symfony2 application.
+that is explicitly build for teaching Functional Testing in a Symfony2 application.
 
 ## Installation
 
-When you have trouble intalling this application before a workshop, send me
-an email to ``benjamin@qafoo.com`` with your errors/problems and I try to help you.
+When you have trouble intalling this application before a workshop, send 
+an email to ``contact@qafoo.com`` with your errors/problems and we try to help you.
 
 If you don't have Composer installed, go to: http://getcomposer.org/download/
 Install Composer as described.
@@ -22,6 +22,27 @@ or
     php composer.phar create-project qafoolabs/symfony2-workshop symfony-ws dev-master --prefer-dist
 
 This will create a new project with this application and download all the dependencies.
+
+### Composer during Workshop and Github Limitations
+
+If you are executing the composer installation during the workshop, it is
+possible Github limits the amount of calls through Composer by IP address. You have to create
+an OAuth token to continue:
+
+1. Create a Github account if you don't have one yet
+2. From the Commandline call:
+
+        curl -u 'your_github_user' -d '\{"note":"Workshop"\}' https://api.github.com/authorizations
+
+3. Update your composer.json with the Token in the result:
+
+        {
+            "config": {
+                "github-oauth": {
+                    "github.com":"tokenhere"
+                }
+            }
+        }
 
 ## Database Configuration
 
