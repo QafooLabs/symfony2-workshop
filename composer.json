@@ -24,7 +24,8 @@
         "behat/mink-extension": "@stable",
         "behat/mink-browserkit-driver": "@stable",
         "behat/mink-sahi-driver": "@stable",
-        "phpunit/phpunit": "@stable"
+        "phpunit/phpunit": "@stable",
+        "qafoolabs/framework-extra-bundle": "@dev"
     },
     "scripts": {
         "post-install-cmd": [

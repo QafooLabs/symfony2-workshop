@@ -1,4 +1,7 @@
-homepage:
-    pattern: "/"
-    defaults:
-        _controller: "QafooWorkshopBundle:Workshop:index"
+helloworld:
+    pattern: "/hello"
+    defaults: { _controller: "Qafoo\\WorkshopBundle\\Controller\\WorkshopController::helloWorldAction" }
+
+service_hello:
+    pattern: "/service-hello"
+    defaults: { _controller: "QafooWorkshop.Controller.Service:helloAction" }

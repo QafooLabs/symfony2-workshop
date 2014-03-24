@@ -6,10 +6,6 @@ _profiler:
     resource: "@WebProfilerBundle/Resources/config/routing/profiler.xml"
     prefix:   /_profiler
 
-QafooWorkshopBundle:
-    resource: "@QafooWorkshopBundle/Controller/WorkshopController.php"
-    type: auto
-
 homepage:
     pattern: "/"
     defaults: { _controller: "QafooWorkshopBundle:Default:index" }
@@ -18,3 +14,6 @@ migrate:
     pattern: "/migrate"
     defaults: { _controller: "QafooWorkshopBundle:Default:migrate" }
     requirements: { _method: 'POST' }
+
+QafooWorkshopBundle:
+    resource: "@QafooWorkshopBundle/Resources/config/routing.yml"
