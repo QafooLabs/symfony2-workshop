@@ -60,66 +60,7 @@ With PHP 5.4 starting your Symfony application is as simple as calling:
 
     php app/console server:run
 
-### Apache
+If you dont have 5.4, see Symfony documentation on (how to configure
+with a webserver)[http://symfony.com/doc/current/cookbook/configuration/web_server_configuration.html].
 
-Put the following into `/etc/apache2/sites-enabled/sf2workshop` or
-the Windows equivalent folder where your Apache Vhosts are located:
-
-    <VirtualHost *:80>
-        ServerName sf2workshop
-
-        DocumentRoot /path/to/project/web
-        <Directory /path/to/project/web/>
-            Options Indexes FollowSymLinks MultiViews
-            AllowOverride None
-            Order allow,deny
-            Allow From all
-            <IfModule mod_rewrite.c>
-                RewriteEngine On
-                RewriteCond %{REQUEST_FILENAME} !-f
-                RewriteRule ^(.*)$ /index.php [QSA,L]
-            </IfModule>
-        </Directory>
-    </VirtualHost>
-
-Make sure to change your `/etc/hosts` file to contain a rule `127.0.0.1
-sf2workshop`.
-
-### Nginx
-
-Put the following into `/etc/nginx/sites-enabled/sf2workshop`:
-
-    server {
-        server_name sf2workshop;
-        root /var/www/project/web;
-
-        location / {
-            # try to serve file directly, fallback to rewrite
-            try_files $uri @rewriteapp;
-        }
-
-        location @rewriteapp {
-            # rewrite all to index.php
-            rewrite ^(.*)$ /index.php/$1 last;
-        }
-
-        location ~ ^/(index|app|app_dev|config)\.php(/|$) {
-            fastcgi_pass unix:/var/run/php5-fpm.sock;
-            fastcgi_split_path_info ^(.+\.php)(/.*)$;
-            include fastcgi_params;
-            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-            fastcgi_param HTTPS off;
-        }
-
-        error_log /var/log/nginx/project_error.log;
-        access_log /var/log/nginx/project_access.log;
-    }
-
-Make sure to change your `/etc/hosts` file to contain a rule `127.0.0.1
-sf2workshop`.
-
-## Important Note
-
-This application is only for workshop purposes, it is neither secure nor sanely
-configured production usage.
-
+Don't forget to adjust your `/etc/hosts` to point to the workshop webserver.
