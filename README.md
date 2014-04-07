@@ -60,16 +60,13 @@ With PHP 5.4 starting your Symfony application is as simple as calling:
 
     php app/console server:run
 
-If you don't have PHP 5.4 yet make sure to change your `/etc/hosts`
-file to contain a rule `127.0.0.1 sf2demo`
-
 ### Apache
 
-Put the following into `/etc/apache2/sites-enabled/sf2demo` or
+Put the following into `/etc/apache2/sites-enabled/sf2workshop` or
 the Windows equivalent folder where your Apache Vhosts are located:
 
     <VirtualHost *:80>
-        ServerName sf2demo
+        ServerName sf2workshop
 
         DocumentRoot /path/to/project/web
         <Directory /path/to/project/web/>
@@ -85,29 +82,41 @@ the Windows equivalent folder where your Apache Vhosts are located:
         </Directory>
     </VirtualHost>
 
+Make sure to change your `/etc/hosts` file to contain a rule `127.0.0.1
+sf2workshop`.
+
 ### Nginx
 
-Put the following into `/etc/nginx/sites-enabled/sf2demo`:
+Put the following into `/etc/nginx/sites-enabled/sf2workshop`:
 
     server {
-        listen       *:80;
-        server_name   sf2demo;
+        server_name sf2workshop;
+        root /var/www/project/web;
 
-        set $index "index.php";
-
-        root   /path/tp/project/web;
-        index  $index;
-
-        if (-f $request_filename) {
-            break;
+        location / {
+            # try to serve file directly, fallback to rewrite
+            try_files $uri @rewriteapp;
         }
 
-        if (!-e $request_filename) {
-            rewrite ^(.+)$ /$index$1 last;
-            break;
+        location @rewriteapp {
+            # rewrite all to index.php
+            rewrite ^(.*)$ /index.php/$1 last;
         }
+
+        location ~ ^/(index|app|app_dev|config)\.php(/|$) {
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
+            fastcgi_split_path_info ^(.+\.php)(/.*)$;
+            include fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            fastcgi_param HTTPS off;
+        }
+
+        error_log /var/log/nginx/project_error.log;
+        access_log /var/log/nginx/project_access.log;
     }
 
+Make sure to change your `/etc/hosts` file to contain a rule `127.0.0.1
+sf2workshop`.
 
 ## Important Note
 
