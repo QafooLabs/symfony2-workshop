@@ -10,6 +10,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('QafooWorkshopBundle:Default:index.html.twig');
+        return $this->render('Default/index.html.twig');
     }
 }

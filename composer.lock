@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "8e21bb064f54b824c1f6f92b5273534d",
+    "hash": "c60d4a2febe134ce88d92fd48ca24e25",
     "packages": [
         {
             "name": "behat/behat",
@@ -1534,16 +1534,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "a05618d03c60eb07b37432583aabf80ae5f5f447"
+                "reference": "3dcca2120451b98a98fe60221ca279a184ee64db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/a05618d03c60eb07b37432583aabf80ae5f5f447",
-                "reference": "a05618d03c60eb07b37432583aabf80ae5f5f447",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/3dcca2120451b98a98fe60221ca279a184ee64db",
+                "reference": "3dcca2120451b98a98fe60221ca279a184ee64db",
                 "shasum": ""
             },
             "require": {
@@ -1594,7 +1594,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-03-20 16:12:25"
+            "time": "2014-03-28 10:54:55"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1781,16 +1781,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.0.12",
+            "version": "4.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "e7631ea91f9e41149c55527047b5dee94538ae1d"
+                "reference": "a80b77d92a6c7723d77c6728b4ae37e92a65ac1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e7631ea91f9e41149c55527047b5dee94538ae1d",
-                "reference": "e7631ea91f9e41149c55527047b5dee94538ae1d",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a80b77d92a6c7723d77c6728b4ae37e92a65ac1d",
+                "reference": "a80b77d92a6c7723d77c6728b4ae37e92a65ac1d",
                 "shasum": ""
             },
             "require": {
@@ -1852,7 +1852,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-03-20 16:22:50"
+            "time": "2014-03-28 11:10:03"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1948,51 +1948,6 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
-        },
-        {
-            "name": "qafoolabs/framework-extra-bundle",
-            "version": "v0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/QafooLabs/FrameworkExtraBundle.git",
-                "reference": "2f17d99a2d955590d55a3394e44bc20ff4be5c67"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/QafooLabs/FrameworkExtraBundle/zipball/2f17d99a2d955590d55a3394e44bc20ff4be5c67",
-                "reference": "2f17d99a2d955590d55a3394e44bc20ff4be5c67",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/framework-bundle": "~2.1"
-            },
-            "require-dev": {
-                "jms/serializer": "@stable",
-                "phake/phake": "@stable",
-                "symfony/form": "@stable"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "QafooLabs\\Bundle\\FrameworkExtraBundle\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "benjamin@qafoo.com"
-                }
-            ],
-            "description": "Various improvements for Symfony applications",
-            "keywords": [
-                "bundle",
-                "symfony"
-            ],
-            "time": "2014-01-12 14:51:13"
         },
         {
             "name": "sebastian/diff",
@@ -2402,16 +2357,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.3.11",
+            "version": "v2.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "aa5b228e87dde1a1a9c7c3c78ad538739da05fe1"
+                "reference": "3574df3d5e0039f3225007b8be534df5c4104503"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/aa5b228e87dde1a1a9c7c3c78ad538739da05fe1",
-                "reference": "aa5b228e87dde1a1a9c7c3c78ad538739da05fe1",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/3574df3d5e0039f3225007b8be534df5c4104503",
+                "reference": "3574df3d5e0039f3225007b8be534df5c4104503",
                 "shasum": ""
             },
             "require": {
@@ -2508,7 +2463,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-02-27 14:55:30"
+            "time": "2014-04-03 05:42:39"
         },
         {
             "name": "twig/extensions",
@@ -2634,8 +2589,7 @@
         "behat/mink-extension": 0,
         "behat/mink-browserkit-driver": 0,
         "behat/mink-sahi-driver": 0,
-        "phpunit/phpunit": 0,
-        "qafoolabs/framework-extra-bundle": 0
+        "phpunit/phpunit": 0
     },
     "platform": {
         "php": ">=5.3.3"

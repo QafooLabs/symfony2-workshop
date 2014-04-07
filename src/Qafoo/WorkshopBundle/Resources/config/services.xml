@@ -7,10 +7,4 @@
     <parameters>
         <parameter key="hello">world</parameter>
     </parameters>
-
-    <services>
-        <service id="QafooWorkshop.Controller.Service" class="Qafoo\WorkshopBundle\Controller\ServiceController">
-            <argument type="service" id="controller_utils" />
-        </service>
-    </services>
 </container>

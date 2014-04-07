@@ -1,19 +1,6 @@
-_wdt:
-    resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"
-    prefix:   /_wdt
-
-_profiler:
-    resource: "@WebProfilerBundle/Resources/config/routing/profiler.xml"
-    prefix:   /_profiler
+tools:
+    resource: "routing_tools.yml"
 
 homepage:
     pattern: "/"
-    defaults: { _controller: "QafooWorkshopBundle:Default:index" }
-
-migrate:
-    pattern: "/migrate"
-    defaults: { _controller: "QafooWorkshopBundle:Default:migrate" }
-    requirements: { _method: 'POST' }
-
-QafooWorkshopBundle:
-    resource: "@QafooWorkshopBundle/Resources/config/routing.yml"
+    defaults: { _controller: "Qafoo\\WorkshopBundle\\Controller\\DefaultController::indexAction" }
