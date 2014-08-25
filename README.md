@@ -23,11 +23,11 @@ or
 
 This will create a new project with this application and download all the dependencies.
 
-### Composer during Workshop and Github Limitations
+### Experiencing Github API Rate Limitations?
 
 If you are executing the composer installation during the workshop, it is
-possible Github limits the amount of calls through Composer by IP address. You have to create
-an OAuth token to continue:
+possible Github limits the amount of calls through Composer by IP address. You
+have to create an OAuth token to continue:
 
 1. Create a Github account if you don't have one yet
 2. From the Commandline call:
