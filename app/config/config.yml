@@ -1,36 +1,8 @@
 imports:
     - { resource: parameters.yml }
+    #- { resource: doctrine.yml }
+    #- { resource: security.yml }
 
-# Doctrine Configuration
-doctrine:
-    dbal:
-        ## SQLite
-        driver:   "pdo_sqlite"
-        path:     "%kernel.root_dir%/workshop.db"
-
-        ## MySQL
-        #driver:   "pdo_mysql"
-        #host:     "localhost"
-        #port:     "3306"
-        #dbname:   "dcworkshop"
-        #user:     "root"
-        #password: ""
-        #charset:  UTF8
-
-        ## PostgreSQL
-        #driver:   "pdo_pgsql"
-        #host:     "localhost"
-        #port:     "5432"
-        #dbname:   "dcworkshop"
-        #user:     "postgres"
-        #password: ""
-        #charset:  UTF8
-
-    orm:
-        auto_generate_proxy_classes: "%kernel.debug%"
-        auto_mapping: true
-
-# Framework
 framework:
     secret:          %secret%
     router:
@@ -47,6 +19,12 @@ framework:
     profiler: { only_exceptions: false }
     test: ~
 
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    paths:
+        - "%kernel.root_dir%/../src/Qafoo/WorkshopBundle/Resources/views"
+
 web_profiler:
     toolbar: true
     intercept_redirects: false
@@ -60,11 +38,3 @@ monolog:
         firephp:
             type:  firephp
             level: info
-
-# Twig Configuration
-twig:
-    debug:            "%kernel.debug%"
-    strict_variables: "%kernel.debug%"
-    paths:
-        - "%kernel.root_dir%/../src/Qafoo/WorkshopBundle/Resources/views"
-
