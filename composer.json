@@ -41,6 +41,6 @@
         "symfony-web-dir": "web"
     },
     "archive": {
-        "exclude": ["!vendor"]
+        "exclude": ["!vendor", ".phpcomplete_extended", "*.swp", "cache"]
     }
 }
